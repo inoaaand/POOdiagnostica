@@ -1,21 +1,22 @@
 package sysBanco;
 
+import java.util.ArrayList;
+
 public class Banco {
-
+    
     private String nome;
-    private int CNPJ;
     private String cidade;
+    private ArrayList<Conta> contas = new ArrayList<>();
+    private ArrayList<Cliente> clientes = new ArrayList<>();
 
 
-    public Banco(String nome, int cNPJ, String cidade) {
+    public Banco(String nome, String cidade) {
         this.nome = nome;
-        CNPJ = cNPJ;
         this.cidade = cidade;
     }
 
     public Banco() {
         this.nome = null;
-        CNPJ = 0;
         this.cidade = null;
     }
 
@@ -27,14 +28,6 @@ public class Banco {
         this.nome = nome;
     }
 
-    public int getCNPJ() {
-        return CNPJ;
-    }
-
-    public void setCNPJ(int cNPJ) {
-        CNPJ = cNPJ;
-    }
-
     public String getCidade() {
         return cidade;
     }
@@ -43,9 +36,24 @@ public class Banco {
         this.cidade = cidade;
     }
 
-    @Override
-    public String toString() {
-        return "Banco [nome=" + nome + ", CNPJ=" + CNPJ + ", cidade=" + cidade + "]";
+
+    public void adicionarCliente(Cliente cliente) {
+        clientes.add(cliente);
     }
 
+    public void adicionarConta(Conta conta) {
+        contas.add(conta);
+    }
+
+    public void listarContas() {
+        for (Conta conta : contas) {
+            System.out.println(conta);
+        }
+    }
+
+    public void listarClientes() {
+        for (Cliente cliente : clientes) {
+            System.out.println(cliente);
+        }
+    }
 }
