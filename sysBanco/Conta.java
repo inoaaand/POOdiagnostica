@@ -28,7 +28,7 @@ public class Conta {
         try {
             if (this.saldo >= valor) {
                 this.saldo -= valor;
-                destino.depositar(valor);
+                destino.depositar(valor); //tranferencia mudar sout
 
                 LocalDateTime agora = LocalDateTime.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");

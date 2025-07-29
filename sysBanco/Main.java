@@ -25,6 +25,7 @@ public class Main {
 
         banco.listarContas();
 
+
     }
 
     private static Banco databaseBanco() {
